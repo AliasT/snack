@@ -59,10 +59,7 @@ func main() {
 			client.SAdd(key, stringifiedPerson)
 		}
 
-		c.JSON(200, gin.H{
-			"message": key,
-			"pong":    client.SMembers(key).Val(),
-		})
+		c.Redirect(302, "/")
 	})
 
 	r.Run(":8080")
