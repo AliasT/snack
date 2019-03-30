@@ -22,7 +22,12 @@ func main() {
 		DB:       0,  // use default DB
 	})
 
+	r.LoadHTMLGlob("templates/*")
+
 	// routes
+	r.GET("/", func(c *gin.Context) {
+		c.HTML(200, "index.html", nil)
+	})
 
 	r.GET("/members/list", func(c *gin.Context) {
 		// TODO:
