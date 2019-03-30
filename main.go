@@ -22,7 +22,11 @@ func main() {
 		DB:       0,  // use default DB
 	})
 
+	// templates
 	r.LoadHTMLGlob("templates/*")
+
+	// assets
+	r.Static("/public", "./public")
 
 	// routes
 	r.GET("/", func(c *gin.Context) {
@@ -43,8 +47,6 @@ func main() {
 		var person Person
 		if c.ShouldBind(&person) == nil {
 			client.SAdd(key, person.Name).Result()
-		} else {
-			fmt.Println("+error+")
 		}
 
 		c.JSON(200, gin.H{

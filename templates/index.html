@@ -1,5 +1,41 @@
-<link
-  href="https://cdn.bootcss.com/twitter-bootstrap/4.3.1/css/bootstrap.min.css"
-  rel="stylesheet"
-/>
-<h1>hello</h1>
+<html>
+  <head>
+    <link
+      href="https://cdn.bootcss.com/twitter-bootstrap/4.3.1/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link href="public/index.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="apply-form-container container no-gutters">
+      <div class="row no-gutters"><h1 class="form-title col-md">Hello</h1></div>
+      <form class="apply-form row no-gutters" action="/toggle" method="POST">
+        <div class="col-md-9">
+          <label class="sr-only" for="inlineFormInputGroup">Username</label>
+          <div class="input-group mb-2">
+            <div class="input-group-prepend">
+              <div class="input-group-text">@</div>
+            </div>
+            <input
+              name="name"
+              type="text"
+              class="form-control"
+              id="inlineFormInputGroup"
+              placeholder="Username"
+            />
+          </div>
+        </div>
+        <div class="justify-content-end row no-gutters col-md-3">
+          <button
+            type="submit"
+            class="btn col-md-10 btn-primary mb-2 submit-btn"
+          >
+            Get Snack !
+          </button>
+        </div>
+      </form>
+    </div>
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  </body>
+</html>
